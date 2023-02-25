@@ -15,7 +15,7 @@
 	function handleKeyPress(e: KeyboardEvent) {
 		const match = document.querySelector(`.${e.key}`);
 		if (match) {
-			const audio = new Audio(`/src/lib/sound/${drumArray[e.key]}.wav`);
+			const audio = new Audio(`/sound/${drumArray[e.key]}.wav`);
 			audio.play();
 			match.classList.add('scale-105');
 			match.classList.replace('border-blue-700', 'border-blue-500');
@@ -31,7 +31,7 @@
 <svelte:window on:keydown|preventDefault={handleKeyPress} />
 
 <div
-	class="flex items-center justify-center h-screen w-full overflow-hidden bg-[url('/src/lib/images/drum-kit.jpg')] bg-cover"
+	class="flex items-center justify-center h-screen w-full overflow-hidden bg-[url('/images/drum-kit.jpg')] bg-cover"
 >
 	<div class="flex flex-row space-x-5">
 		{#each Object.entries(drumArray) as [key, text]}
